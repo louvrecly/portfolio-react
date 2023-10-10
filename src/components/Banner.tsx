@@ -16,7 +16,9 @@ const Banner = ({ id, name, title, location }: BannerProps) => {
         <div className="tw-mb-5">
           <h1 className="tw-mb-3">{name}</h1>
 
-          <h2>{title} - {location}</h2>
+          <h2>
+            {title} - {location}
+          </h2>
         </div>
 
         <a href="#about">
@@ -25,6 +27,6 @@ const Banner = ({ id, name, title, location }: BannerProps) => {
       </div>
     </Section>
   );
-}
+};
 
 export default Banner;

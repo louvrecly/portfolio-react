@@ -8,13 +8,13 @@ interface NavLinksProps {
 const NavLinks = ({ navItems = [], onNavigated }: NavLinksProps) => {
   return (
     <>
-      {navItems.map(navItem => (
+      {navItems.map((navItem) => (
         <a key={navItem.key} href={navItem.link}>
           <div onClick={onNavigated}>{navItem.title}</div>
         </a>
       ))}
     </>
   );
-}
+};
 
 export default NavLinks;
