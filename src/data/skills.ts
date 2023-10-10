@@ -1,4 +1,9 @@
-type SkillTypeKeys = 'languages' | 'frontend' | 'backend' | 'databases' | 'devOps';
+type SkillTypeKeys =
+  | 'languages'
+  | 'frontend'
+  | 'backend'
+  | 'databases'
+  | 'devOps';
 
 interface SkillType {
   key: SkillTypeKeys;
@@ -30,14 +35,46 @@ const skillTypesMap: SkillTypesMap = {
   },
 };
 
-export const skillTypes = Object.keys(skillTypesMap)
-  .map(key => skillTypesMap[key as SkillTypeKeys]);
+export const skillTypes = Object.keys(skillTypesMap).map(
+  (key) => skillTypesMap[key as SkillTypeKeys],
+);
 
 const languagesSkills = ['JavaScript', 'TypeScript', 'Python', 'SQL'];
-const frontendSkills = ['Vue', 'Nuxt', 'React', 'Redux', 'Next', 'AngularJS', 'HTML', 'CSS', 'Tailwind CSS', 'SASS', 'Flutter'];
-const backendSkills = ['Node.js', 'Express.js', 'Flask', 'Firebase', 'MongoDB', 'Redis', 'PostgreSQL', 'Vitest'];
-const databasesSkills = ['SQLite', 'PostgreSQL', 'Firestore', 'MongoDB', 'Redis'];
-const devOpsSkills = ['Google Cloud Platform (GCP)', 'Amazon Web Services (AWS)', 'GitLab CICD'];
+const frontendSkills = [
+  'Vue',
+  'Nuxt',
+  'React',
+  'Redux',
+  'Next',
+  'AngularJS',
+  'HTML',
+  'CSS',
+  'Tailwind CSS',
+  'SASS',
+  'Flutter',
+];
+const backendSkills = [
+  'Node.js',
+  'Express.js',
+  'Flask',
+  'Firebase',
+  'MongoDB',
+  'Redis',
+  'PostgreSQL',
+  'Vitest',
+];
+const databasesSkills = [
+  'SQLite',
+  'PostgreSQL',
+  'Firestore',
+  'MongoDB',
+  'Redis',
+];
+const devOpsSkills = [
+  'Google Cloud Platform (GCP)',
+  'Amazon Web Services (AWS)',
+  'GitLab CICD',
+];
 
 export const skillsMap = {
   languages: languagesSkills,

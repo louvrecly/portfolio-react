@@ -11,4 +11,3 @@ export const navItems: NavItem[] = [
   { key: 'projects', title: 'Projects', link: '#projects' },
   { key: 'contact', title: 'Contact', link: '#contact' },
 ];
-

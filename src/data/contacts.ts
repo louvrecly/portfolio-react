@@ -8,7 +8,7 @@ interface Contact {
   icon: IconProp;
 }
 
-type ContactMap = Record<string, Contact>
+type ContactMap = Record<string, Contact>;
 
 const contactMap: ContactMap = {
   mobile: {
@@ -43,10 +43,6 @@ const contactMap: ContactMap = {
 
 type ContactKey = keyof ContactMap;
 
-const contactKeys: ContactKey[] = [
-  'email',
-  'github',
-  'linkedIn',
-];
+const contactKeys: ContactKey[] = ['email', 'github', 'linkedIn'];
 
-export const contacts = contactKeys.map(key => contactMap[key]);
+export const contacts = contactKeys.map((key) => contactMap[key]);

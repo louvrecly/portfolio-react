@@ -10,7 +10,7 @@ interface NavBarProps {
 const NavBar = ({ navItems = [] }: NavBarProps) => {
   const [isDrawerOpened, setIsDrawerOpened] = useState(false);
   function toggleDrawer() {
-    setIsDrawerOpened(isOpened => !isOpened);
+    setIsDrawerOpened((isOpened) => !isOpened);
   }
 
   function onNavigated() {
@@ -24,7 +24,10 @@ const NavBar = ({ navItems = [] }: NavBarProps) => {
 
         <div className="tw-p-2 tw-relative sm:tw-p-5">
           <div className="tw-flex tw-flex-row-reverse sm:tw-hidden">
-            <button className="tw-py-2 tw-px-4 tw-border-none" onClick={toggleDrawer}>
+            <button
+              className="tw-py-2 tw-px-4 tw-border-none"
+              onClick={toggleDrawer}
+            >
               {/* <FontAwesomeIcon icon="fa-solid fa-bars" /> */}
               <FontAwesomeIcon icon={['fas', 'bars']} />
             </button>
@@ -47,6 +50,6 @@ const NavBar = ({ navItems = [] }: NavBarProps) => {
       )}
     </div>
   );
-}
+};
 
 export default NavBar;
