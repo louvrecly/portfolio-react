@@ -9,5 +9,5 @@ export default {
     },
   },
   plugins: [],
-  prefix: 'tw-',
+  prefix: 'u-',
 };

@@ -10,17 +10,22 @@ const Section = ({ title = '', id, children }: SectionProps) => {
   return (
     <section
       id={id}
-      className="tw-relative tw-min-h-screen tw-flex tw-flex-col tw-scroll-m-16"
+      className="u-relative u-min-h-screen u-flex u-flex-col u-scroll-m-16"
     >
       {title && (
-        <h2 className="tw-p-5 tw-text-3xl tw-font-bold tw-flex tw-items-center tw-gap-4">
-          <span className="tw-border-y-2 tw-border-inherit tw-h-0 tw-flex-1"></span>
+        <h2 className="u-p-5 u-text-3xl u-font-bold u-flex u-items-center u-gap-4">
+          <span className="u-border-y-2 u-border-inherit u-h-0 u-flex-1"></span>
           <span>{title}</span>
-          <span className="tw-border-y-2 tw-border-inherit tw-h-0 tw-flex-1"></span>
+          <span className="u-border-y-2 u-border-inherit u-h-0 u-flex-1"></span>
         </h2>
       )}
 
-      <div className={'tw-pb-16 tw-px-5 tw-flex-1 tw-flex tw-items-center tw-justify-center' + (!title ? ' tw-pt-16' : '')}>
+      <div
+        className={
+          'u-pb-16 u-px-5 u-flex-1 u-flex u-items-center u-justify-center' +
+          (!title ? ' u-pt-16' : '')
+        }
+      >
         {children}
       </div>
     </section>

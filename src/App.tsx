@@ -35,7 +35,7 @@ const App = () => {
   );
 
   return (
-    <div className="tw-relative">
+    <div className="u-relative">
       <Banner
         id="home"
         name={bannerData.name}
@@ -47,26 +47,26 @@ const App = () => {
 
       <div>
         <Section id="about" title="About Me">
-          <div className="tw-max-w-4xl">
-            <p className="tw-mb-5">
+          <div className="u-max-w-4xl">
+            <p className="u-mb-5">
               {aboutData.name} is {identityArticle}{' '}
-              <strong className="tw-font-mono">{identity}</strong>
+              <strong className="u-font-mono">{identity}</strong>
             </p>
 
             <Card>
-              <p className="tw-p-5">{aboutData.description}</p>
+              <p className="u-p-5">{aboutData.description}</p>
             </Card>
           </div>
         </Section>
 
         <Section id="skills" title="Tools and Skills">
-          <div className="tw-max-w-4xl">
-            <ul className="tw-flex tw-gap-5 tw-flex-wrap">
+          <div className="u-max-w-4xl">
+            <ul className="u-flex u-gap-5 u-flex-wrap">
               {skillTypes.map((skillType) => (
-                <li key={skillType.key} className="tw-flex-1">
+                <li key={skillType.key} className="u-flex-1">
                   <Card>
-                    <div className=" tw-p-5">
-                      <h3 className="tw-mb-3 tw-text-xl tw-font-bold">
+                    <div className="u-p-5">
+                      <h3 className="u-mb-3 u-text-xl u-font-bold">
                         {skillType.title}
                       </h3>
 
@@ -84,27 +84,27 @@ const App = () => {
         </Section>
 
         <Section id="projects" title="Projects">
-          <div className="tw-max-w-4xl">
-            <ul className="tw-flex tw-flex-col tw-gap-5">
+          <div className="u-max-w-4xl">
+            <ul className="u-flex u-flex-col u-gap-5">
               {projects.map((project) => (
                 <li key={project.key} className="">
                   <Card>
-                    <div className="tw-flex tw-flex-col tw-justify-items-stretch md:tw-flex-row">
+                    <div className="u-flex u-flex-col u-justify-items-stretch md:u-flex-row">
                       {!!project.image && (
-                        <div className="tw-flex-1 md:tw-w-1/2">
+                        <div className="u-flex-1 md:u-w-1/2">
                           <img
-                            className="tw-w-full tw-h-full tw-object-cover"
+                            className="u-w-full u-h-full u-object-cover"
                             src={project.image}
                           />
                         </div>
                       )}
 
-                      <div className="tw-p-5 tw-flex-1">
-                        <h3 className="tw-text-xl tw-font-bold">
+                      <div className="u-p-5 u-flex-1">
+                        <h3 className="u-text-xl u-font-bold">
                           {project.title}
                         </h3>
 
-                        <div className="tw-my-3">
+                        <div className="u-my-3">
                           <p>
                             {project.type} - {project.subtitle}
                           </p>
@@ -129,11 +129,11 @@ const App = () => {
         <Section id="contact" title="Contact">
           <ul>
             {contacts.map((contact) => (
-              <li key={contact.key} className="tw-mb-3">
-                <label className="tw-text-l sm:tw-text-xl">
+              <li key={contact.key} className="u-mb-3">
+                <label className="u-text-l sm:u-text-xl">
                   {contact.icon ? (
                     <FontAwesomeIcon
-                      className="tw-mr-3"
+                      className="u-mr-3"
                       icon={contact.icon}
                     ></FontAwesomeIcon>
                   ) : (

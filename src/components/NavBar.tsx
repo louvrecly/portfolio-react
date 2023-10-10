@@ -18,14 +18,14 @@ const NavBar = ({ navItems = [] }: NavBarProps) => {
   }
 
   return (
-    <div className="tw-sticky tw-top-0 tw-w-full tw-z-10">
-      <nav className="tw-relative tw-shadow-lg tw-z-10 tw-transition-shadow hover:tw-shadow-xl">
-        <div className="tw-bg-zinc-950 tw-absolute tw-inset-0 tw-opacity-50"></div>
+    <div className="u-sticky u-top-0 u-w-full u-z-10">
+      <nav className="u-relative u-shadow-lg u-z-10 u-transition-shadow hover:u-shadow-xl">
+        <div className="u-bg-zinc-950 u-absolute u-inset-0 u-opacity-50"></div>
 
-        <div className="tw-p-2 tw-relative sm:tw-p-5">
-          <div className="tw-flex tw-flex-row-reverse sm:tw-hidden">
+        <div className="u-p-2 u-relative sm:u-p-5">
+          <div className="u-flex u-flex-row-reverse sm:u-hidden">
             <button
-              className="tw-py-2 tw-px-4 tw-border-none"
+              className="u-py-2 u-px-4 u-border-none"
               onClick={toggleDrawer}
             >
               {/* <FontAwesomeIcon icon="fa-solid fa-bars" /> */}
@@ -33,17 +33,17 @@ const NavBar = ({ navItems = [] }: NavBarProps) => {
             </button>
           </div>
 
-          <div className="tw-hidden sm:tw-flex sm:tw-gap-4">
+          <div className="u-hidden sm:u-flex sm:u-gap-4">
             <NavLinks navItems={navItems} onNavigated={onNavigated}></NavLinks>
           </div>
         </div>
       </nav>
 
       {isDrawerOpened && (
-        <div className="tw-absolute tw-top-0 tw-w-screen tw-h-screen sm:tw-hidden">
-          <div className="tw-absolute tw-inset-0 tw-bg-zinc-950 tw-opacity-50"></div>
+        <div className="u-absolute u-top-0 u-w-screen u-h-screen sm:u-hidden">
+          <div className="u-absolute u-inset-0 u-bg-zinc-950 u-opacity-50"></div>
 
-          <div className="tw-relative tw-w-full tw-h-full tw-py-16 tw-px-5 tw-text-start tw-flex tw-flex-col tw-gap-3">
+          <div className="u-relative u-w-full u-h-full u-py-16 u-px-5 u-text-start u-flex u-flex-col u-gap-3">
             <NavLinks navItems={navItems}></NavLinks>
           </div>
         </div>
