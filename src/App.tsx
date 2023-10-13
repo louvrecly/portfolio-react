@@ -65,106 +65,102 @@ const App = () => {
 
         <Section id="skills" title="Tools and Skills">
           <div className="u-max-w-4xl">
-            <ul className="u-flex u-gap-5 u-flex-wrap">
+            <div className="u-flex u-flex-col u-gap-5 u-flex-wrap u-items-stretch sm:u-flex-row">
               {skillTypes.map((skillType) => (
-                <li key={skillType.key} className="u-flex-1">
-                  <Card>
-                    <div className="u-p-5">
-                      <h3 className="u-mb-3 u-text-xl u-font-bold">
-                        {skillType.title}
-                      </h3>
+                <Card key={skillType.key} classes="u-flex-1">
+                  <div className="u-p-5">
+                    <h3 className="u-mb-3 u-text-xl u-font-bold">
+                      {skillType.title}
+                    </h3>
 
-                      <ul className="u-flex u-flex-wrap u-justify-around u-gap-4">
-                        {skillType.skills.map((skill) => (
-                          <a
-                            key={skill.key}
-                            href={skill.link || '#'}
-                            target="_blank"
-                          >
-                            <li className="u-flex u-flex-col u-items-center u-gap-1 u-transition-transform hover:u-scale-110">
-                              {skill.logo && (
-                                <img
-                                  src={skill.logo}
-                                  alt={skill.name}
-                                  width="50"
-                                />
-                              )}
-                              {skill.name}
-                            </li>
-                          </a>
-                        ))}
-                      </ul>
-                    </div>
-                  </Card>
-                </li>
+                    <ul className="u-flex u-flex-wrap u-justify-around u-gap-4">
+                      {skillType.skills.map((skill) => (
+                        <a
+                          key={skill.key}
+                          href={skill.link || '#'}
+                          target="_blank"
+                        >
+                          <li className="u-flex u-flex-col u-items-center u-gap-1 u-transition-transform hover:u-scale-110">
+                            {skill.logo && (
+                              <img
+                                src={skill.logo}
+                                alt={skill.name}
+                                width="50"
+                              />
+                            )}
+                            {skill.name}
+                          </li>
+                        </a>
+                      ))}
+                    </ul>
+                  </div>
+                </Card>
               ))}
-            </ul>
+            </div>
           </div>
         </Section>
 
         <Section id="projects" title="Projects">
           <div className="u-max-w-4xl">
-            <ul className="u-flex u-flex-col u-gap-5 sm:u-gap-10">
+            <div className="u-flex u-flex-col u-gap-5 sm:u-gap-10">
               {projects.map((project, index) => (
-                <li key={project.key}>
-                  <Card>
-                    <div
-                      className={`u-flex u-flex-col u-justify-items-stretch ${
-                        index % 2 ? 'sm:u-flex-row-reverse' : 'sm:u-flex-row'
-                      }`}
-                    >
-                      {project.image && (
-                        <div className="sm:u-w-1/2">
-                          <img
-                            className="u-w-full u-h-full u-object-cover"
-                            src={project.image}
-                          />
-                        </div>
-                      )}
-
-                      <div className="u-p-5 sm:u-flex-1">
-                        <h3 className="u-text-xl u-font-bold">
-                          {project.title}
-                        </h3>
-
-                        <div className="u-my-3">
-                          <p>
-                            {project.type} - {project.subtitle}
-                          </p>
-
-                          {!!project.skills.length && (
-                            <div>
-                              <p>Tech Stack:</p>
-
-                              <ul className="u-flex u-flex-wrap u-justify-center u-gap-4">
-                                {project.skills.map((skill) => (
-                                  <a href={skill.link} target="_blank">
-                                    <img
-                                      className="u-transition-transform hover:u-scale-110"
-                                      src={skill.logo}
-                                      alt={skill.name}
-                                      width="30"
-                                    />
-                                  </a>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-
-                          <p>{project.description}</p>
-                        </div>
-
-                        {project.link && (
-                          <a href={project.link} target="_blank">
-                            <button>View Demo</button>
-                          </a>
-                        )}
+                <Card key={project.key}>
+                  <div
+                    className={`u-flex u-flex-col u-justify-items-stretch ${
+                      index % 2 ? 'sm:u-flex-row-reverse' : 'sm:u-flex-row'
+                    }`}
+                  >
+                    {project.image && (
+                      <div className="sm:u-w-1/2">
+                        <img
+                          className="u-w-full u-h-full u-object-cover"
+                          src={project.image}
+                        />
                       </div>
+                    )}
+
+                    <div className="u-p-5 sm:u-flex-1">
+                      <h3 className="u-text-xl u-font-bold">
+                        {project.title}
+                      </h3>
+
+                      <div className="u-my-3">
+                        <p>
+                          {project.type} - {project.subtitle}
+                        </p>
+
+                        {!!project.skills.length && (
+                          <div>
+                            <p>Tech Stack:</p>
+
+                            <ul className="u-flex u-flex-wrap u-justify-center u-gap-4">
+                              {project.skills.map((skill) => (
+                                <a href={skill.link} target="_blank">
+                                  <img
+                                    className="u-transition-transform hover:u-scale-110"
+                                    src={skill.logo}
+                                    alt={skill.name}
+                                    width="30"
+                                  />
+                                </a>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        <p>{project.description}</p>
+                      </div>
+
+                      {project.link && (
+                        <a href={project.link} target="_blank">
+                          <button>View Demo</button>
+                        </a>
+                      )}
                     </div>
-                  </Card>
-                </li>
+                  </div>
+                </Card>
               ))}
-            </ul>
+            </div>
           </div>
         </Section>
 

@@ -9,13 +9,11 @@ const Card = ({ classes = '', children }: CardProps) => {
   return (
     <div
       className={
-        'u-relative u-rounded u-overflow-hidden u-min-w-[280px] u-h-full u-shadow-lg u-transition-shadow hover:u-shadow-xl ' +
+        'u-rounded u-bg-zinc-950/50 u-overflow-hidden u-min-w-[280px] u-shadow-lg u-transition-shadow hover:u-shadow-xl ' +
         classes
       }
     >
-      <div className="u-absolute u-w-full u-h-full u-bg-zinc-950 u-opacity-50"></div>
-
-      <div className="u-relative">{children}</div>
+      {children}
     </div>
   );
 };

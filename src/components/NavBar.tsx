@@ -19,32 +19,24 @@ const NavBar = ({ navItems = [] }: NavBarProps) => {
 
   return (
     <div className="u-sticky u-top-0 u-w-full u-z-10">
-      <nav className="u-relative u-shadow-lg u-z-10 u-transition-shadow hover:u-shadow-xl">
-        <div className="u-bg-zinc-950 u-absolute u-inset-0 u-opacity-50"></div>
+      <nav className="u-relative u-p-2 u-bg-zinc-950/70 u-shadow-lg u-z-10 u-transition hover:u-shadow-xl hover:u-bg-zinc-950/90 sm:u-py-5 sm:u-px-10">
+        <div className="u-flex u-flex-row-reverse sm:u-hidden">
+          <button
+            className="u-py-2 u-px-4 u-border-none"
+            onClick={toggleDrawer}
+          >
+            <FontAwesomeIcon icon={['fas', 'bars']} />
+          </button>
+        </div>
 
-        <div className="u-p-2 u-relative sm:u-py-5 sm:u-px-10">
-          <div className="u-flex u-flex-row-reverse sm:u-hidden">
-            <button
-              className="u-py-2 u-px-4 u-border-none"
-              onClick={toggleDrawer}
-            >
-              <FontAwesomeIcon icon={['fas', 'bars']} />
-            </button>
-          </div>
-
-          <div className="u-hidden sm:u-flex sm:u-gap-4">
-            <NavLinks navItems={navItems} onNavigated={onNavigated}></NavLinks>
-          </div>
+        <div className="u-hidden sm:u-flex sm:u-gap-4">
+          <NavLinks navItems={navItems} onNavigated={onNavigated}></NavLinks>
         </div>
       </nav>
 
       {isDrawerOpened && (
-        <div className="u-absolute u-top-0 u-w-screen u-h-screen sm:u-hidden">
-          <div className="u-absolute u-inset-0 u-bg-zinc-950 u-opacity-50"></div>
-
-          <div className="u-relative u-w-full u-h-full u-py-16 u-px-5 u-text-start u-flex u-flex-col u-gap-3">
-            <NavLinks navItems={navItems}></NavLinks>
-          </div>
+        <div className="u-absolute u-top-0 u-py-16 u-px-5 u-w-screen u-h-screen u-bg-zinc-950/70 u-text-start u-flex u-flex-col u-gap-3 sm:u-hidden">
+          <NavLinks navItems={navItems}></NavLinks>
         </div>
       )}
     </div>

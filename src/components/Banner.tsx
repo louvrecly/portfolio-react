@@ -13,20 +13,20 @@ const Banner = ({ id, name, title, location }: BannerProps) => {
     <Section id={id}>
       <GlowBackground />
 
-      <div className="u-absolute u-inset-0 u-bg-gradient-to-t u-from-zinc-950 u-to-transparent u-opacity-50"></div>
+      <div className="u-py-16 u-px-5 u-absolute u-inset-0 u-bg-gradient-to-t u-from-zinc-950/70 u-to-transparent u-flex u-justify-center u-items-center sm:u-px-10">
+        <div>
+          <div className="u-mb-5">
+            <h1 className="u-mb-3">{name}</h1>
 
-      <div className="u-relative">
-        <div className="u-mb-5">
-          <h1 className="u-mb-3">{name}</h1>
+            <h2>
+              {title} - {location}
+            </h2>
+          </div>
 
-          <h2>
-            {title} - {location}
-          </h2>
+          <a href="#about">
+            <button>Learn More</button>
+          </a>
         </div>
-
-        <a href="#about">
-          <button>Learn More</button>
-        </a>
       </div>
     </Section>
   );
