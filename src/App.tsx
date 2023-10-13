@@ -48,7 +48,7 @@ const App = () => {
       <div>
         <Section id="about" title="About Me">
           <div className="u-max-w-4xl">
-            <h3 className="u-mb-5">
+            <h3 className="u-my-16 u-text-2xl">
               <span className="u-block sm:u-inline">
                 {aboutData.name} is {identityArticle}
               </span>{' '}
@@ -56,7 +56,7 @@ const App = () => {
             </h3>
 
             <Card>
-              <p className="u-p-5">{aboutData.description}</p>
+              <p className="u-py-3 u-px-6 u-font-mono u-text-start sm:u-px-12">{aboutData.description}</p>
             </Card>
           </div>
         </Section>
@@ -102,17 +102,17 @@ const App = () => {
 
         <Section id="projects" title="Projects">
           <div className="u-max-w-4xl">
-            <ul className="u-flex u-flex-col u-gap-5">
+            <ul className="u-flex u-flex-col u-gap-5 sm:u-gap-10">
               {projects.map((project, index) => (
                 <li key={project.key}>
                   <Card>
                     <div
                       className={`u-flex u-flex-col u-justify-items-stretch ${
-                        index % 2 ? 'md:u-flex-row-reverse' : 'md:u-flex-row'
+                        index % 2 ? 'sm:u-flex-row-reverse' : 'sm:u-flex-row'
                       }`}
                     >
                       {project.image && (
-                        <div className="md:u-w-1/2">
+                        <div className="sm:u-w-1/2">
                           <img
                             className="u-w-full u-h-full u-object-cover"
                             src={project.image}
@@ -120,7 +120,7 @@ const App = () => {
                         </div>
                       )}
 
-                      <div className="u-p-5 md:u-flex-1">
+                      <div className="u-p-5 sm:u-flex-1">
                         <h3 className="u-text-xl u-font-bold">
                           {project.title}
                         </h3>

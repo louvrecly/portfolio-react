@@ -22,13 +22,12 @@ const NavBar = ({ navItems = [] }: NavBarProps) => {
       <nav className="u-relative u-shadow-lg u-z-10 u-transition-shadow hover:u-shadow-xl">
         <div className="u-bg-zinc-950 u-absolute u-inset-0 u-opacity-50"></div>
 
-        <div className="u-p-2 u-relative sm:u-p-5">
+        <div className="u-p-2 u-relative sm:u-py-5 sm:u-px-10">
           <div className="u-flex u-flex-row-reverse sm:u-hidden">
             <button
               className="u-py-2 u-px-4 u-border-none"
               onClick={toggleDrawer}
             >
-              {/* <FontAwesomeIcon icon="fa-solid fa-bars" /> */}
               <FontAwesomeIcon icon={['fas', 'bars']} />
             </button>
           </div>
