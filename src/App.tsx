@@ -72,9 +72,24 @@ const App = () => {
                         {skillType.title}
                       </h3>
 
-                      <ul>
+                      <ul className="u-flex u-flex-wrap u-justify-around u-gap-4">
                         {skillsMap[skillType.key].map((skill) => (
-                          <li key={skill}>{skill}</li>
+                          <a
+                            key={skill.key}
+                            href={skill.link || '#'}
+                            target="_blank"
+                          >
+                            <li className="u-flex u-flex-col u-items-center u-gap-1 u-transition-transform hover:u-scale-110">
+                              {skill.logo && (
+                                <img
+                                  src={skill.logo}
+                                  alt={skill.name}
+                                  width="50"
+                                />
+                              )}
+                              {skill.name}
+                            </li>
+                          </a>
                         ))}
                       </ul>
                     </div>
