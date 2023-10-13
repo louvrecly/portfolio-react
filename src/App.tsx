@@ -48,10 +48,12 @@ const App = () => {
       <div>
         <Section id="about" title="About Me">
           <div className="u-max-w-4xl">
-            <p className="u-mb-5">
-              {aboutData.name} is {identityArticle}{' '}
+            <h3 className="u-mb-5">
+              <span className="u-block sm:u-inline">
+                {aboutData.name} is {identityArticle}
+              </span>{' '}
               <strong className="u-font-mono">{identity}</strong>
-            </p>
+            </h3>
 
             <Card>
               <p className="u-p-5">{aboutData.description}</p>
