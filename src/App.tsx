@@ -103,12 +103,16 @@ const App = () => {
         <Section id="projects" title="Projects">
           <div className="u-max-w-4xl">
             <ul className="u-flex u-flex-col u-gap-5">
-              {projects.map((project) => (
-                <li key={project.key} className="">
+              {projects.map((project, index) => (
+                <li key={project.key}>
                   <Card>
-                    <div className="u-flex u-flex-col u-justify-items-stretch md:u-flex-row">
-                      {!!project.image && (
-                        <div className="u-flex-1 md:u-w-1/2">
+                    <div
+                      className={`u-flex u-flex-col u-justify-items-stretch ${
+                        index % 2 ? 'md:u-flex-row-reverse' : 'md:u-flex-row'
+                      }`}
+                    >
+                      {project.image && (
+                        <div className="md:u-w-1/2">
                           <img
                             className="u-w-full u-h-full u-object-cover"
                             src={project.image}
@@ -116,7 +120,7 @@ const App = () => {
                         </div>
                       )}
 
-                      <div className="u-p-5 u-flex-1">
+                      <div className="u-p-5 md:u-flex-1">
                         <h3 className="u-text-xl u-font-bold">
                           {project.title}
                         </h3>
