@@ -1,4 +1,5 @@
 import Section from './Section';
+import GlowBackground from './GlowBackground';
 
 interface BannerProps {
   id?: string;
@@ -10,6 +11,8 @@ interface BannerProps {
 const Banner = ({ id, name, title, location }: BannerProps) => {
   return (
     <Section id={id}>
+      <GlowBackground />
+
       <div className="u-absolute u-inset-0 u-bg-gradient-to-t u-from-zinc-950 u-to-transparent u-opacity-50"></div>
 
       <div className="u-relative">
