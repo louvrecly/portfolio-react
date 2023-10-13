@@ -297,7 +297,7 @@ export function getSkillsByKeys(keys: SkillKey[]) {
   return keys.map((key) => skillsMap[key]);
 }
 
-const skillTypeKeys = ALL_SKILL_TYPE_KEYS;
+const skillTypeKeys: SkillTypeKey[] = [...ALL_SKILL_TYPE_KEYS];
 
 export const skillTypes: DetailedSkillType[] = skillTypeKeys.map(
   (skillTypeKey) => {

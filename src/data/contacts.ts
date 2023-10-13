@@ -1,14 +1,18 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
+const ALL_CONTACT_KEYS = ['email', 'github', 'linkedIn'] as const;
+
+type ContactKey = (typeof ALL_CONTACT_KEYS)[number];
+
 interface Contact {
-  key: string;
+  key: ContactKey;
   title: string;
   value: string;
   link: string;
   icon: IconProp;
 }
 
-type ContactMap = Record<string, Contact>;
+type ContactMap = Record<ContactKey, Contact>;
 
 const contactMap: ContactMap = {
   email: {
@@ -34,8 +38,6 @@ const contactMap: ContactMap = {
   },
 };
 
-type ContactKey = keyof ContactMap;
-
-const contactKeys: ContactKey[] = ['email', 'github', 'linkedIn'];
+const contactKeys: ContactKey[] = [...ALL_CONTACT_KEYS];
 
 export const contacts = contactKeys.map((key) => contactMap[key]);

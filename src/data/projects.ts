@@ -122,7 +122,7 @@ const projectsMap: ProjectsMap = {
   },
 };
 
-const projectKeys = ALL_PROJECT_KEYS;
+const projectKeys: ProjectKey[] = [...ALL_PROJECT_KEYS];
 
 export const projects: DetailedProject[] = projectKeys.map((projectKey) => {
   const { skillKeys, ...rest } = projectsMap[projectKey];
