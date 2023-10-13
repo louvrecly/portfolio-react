@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { navItems } from './data/navigation';
 import { bannerData } from './data/banner';
 import { aboutData } from './data/about';
-import { skillTypes, skillsMap } from './data/skills';
+import { skillTypes } from './data/skills';
 import { projects } from './data/projects';
 import { contacts } from './data/contacts';
 
@@ -56,7 +56,9 @@ const App = () => {
             </h3>
 
             <Card>
-              <p className="u-py-3 u-px-6 u-font-mono u-text-start sm:u-px-12">{aboutData.description}</p>
+              <p className="u-py-3 u-px-6 u-font-mono u-text-start sm:u-px-12">
+                {aboutData.description}
+              </p>
             </Card>
           </div>
         </Section>
@@ -73,7 +75,7 @@ const App = () => {
                       </h3>
 
                       <ul className="u-flex u-flex-wrap u-justify-around u-gap-4">
-                        {skillsMap[skillType.key].map((skill) => (
+                        {skillType.skills.map((skill) => (
                           <a
                             key={skill.key}
                             href={skill.link || '#'}
@@ -129,6 +131,23 @@ const App = () => {
                           <p>
                             {project.type} - {project.subtitle}
                           </p>
+
+                          <div>
+                            <p>Tech Stack:</p>
+
+                            <ul className="u-flex u-flex-wrap u-justify-center u-gap-4">
+                              {project.skills.map((skill) => (
+                                <a href={skill.link} target="_blank">
+                                  <img
+                                    className="u-transition-transform hover:u-scale-110"
+                                    src={skill.logo}
+                                    alt={skill.name}
+                                    width="30"
+                                  />
+                                </a>
+                              ))}
+                            </ul>
+                          </div>
 
                           <p>{project.description}</p>
                         </div>
