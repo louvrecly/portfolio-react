@@ -53,16 +53,7 @@ const frontendSkills = [
   'SASS',
   'Flutter',
 ];
-const backendSkills = [
-  'Node.js',
-  'Express.js',
-  'Flask',
-  'Firebase',
-  'MongoDB',
-  'Redis',
-  'PostgreSQL',
-  'Vitest',
-];
+const backendSkills = ['Node.js', 'Express.js', 'Flask', 'Firebase', 'Vitest'];
 const databasesSkills = [
   'SQLite',
   'PostgreSQL',

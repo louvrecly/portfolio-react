@@ -11,13 +11,6 @@ interface Contact {
 type ContactMap = Record<string, Contact>;
 
 const contactMap: ContactMap = {
-  mobile: {
-    key: 'mobile',
-    title: 'Mobile',
-    value: '+1 (647) 834 6410',
-    link: 'tel:+1 (647) 834 6410',
-    icon: ['fas', 'mobile'],
-  },
   email: {
     key: 'email',
     title: 'Email',
