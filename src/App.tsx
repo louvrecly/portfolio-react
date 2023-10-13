@@ -132,22 +132,24 @@ const App = () => {
                             {project.type} - {project.subtitle}
                           </p>
 
-                          <div>
-                            <p>Tech Stack:</p>
+                          {!!project.skills.length && (
+                            <div>
+                              <p>Tech Stack:</p>
 
-                            <ul className="u-flex u-flex-wrap u-justify-center u-gap-4">
-                              {project.skills.map((skill) => (
-                                <a href={skill.link} target="_blank">
-                                  <img
-                                    className="u-transition-transform hover:u-scale-110"
-                                    src={skill.logo}
-                                    alt={skill.name}
-                                    width="30"
-                                  />
-                                </a>
-                              ))}
-                            </ul>
-                          </div>
+                              <ul className="u-flex u-flex-wrap u-justify-center u-gap-4">
+                                {project.skills.map((skill) => (
+                                  <a href={skill.link} target="_blank">
+                                    <img
+                                      className="u-transition-transform hover:u-scale-110"
+                                      src={skill.logo}
+                                      alt={skill.name}
+                                      width="30"
+                                    />
+                                  </a>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
 
                           <p>{project.description}</p>
                         </div>
