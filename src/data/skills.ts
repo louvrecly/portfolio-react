@@ -132,7 +132,7 @@ const skillsMap: SkillsMap = {
   react: {
     key: 'react',
     name: 'React',
-    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    logo: '/logos/react.svg',
     link: 'https://react.dev/',
   },
   vue: {
