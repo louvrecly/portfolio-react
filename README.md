@@ -1,27 +1,26 @@
-# React + TypeScript + Vite
+# 📊 Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a portfolio website of me. It contains multiple sections with different information about myself. It is built with React, TypeScript, Vite, Tailwind CSS, and SASS. A live demo can be previewed [here](https://portfolio-react-louvrecly.vercel.app/).
 
-Currently, two official plugins are available:
+## 💡Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Despite being a static website, it has the following features:
 
-## Expanding the ESLint configuration
+- responsive design to the viewport of the device
+- animated background built with SASS
+- smooth scrolling between sections
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## ⚙️ Tech Stack
 
-- Configure the top-level `parserOptions` property like this:
+- [<img src="src/public/logos/react.svg" alt="React" height="20">&nbsp;React](https://react.dev/)
+- [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" height="20">&nbsp;TypeScript](https://www.typescriptlang.org/)
+- [<img src="src/public/logos/vite.svg" alt="Vite" height="20">&nbsp;Vite](https://vitejs.dev/)
+- [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" alt="HTML" height="20">&nbsp;HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="CSS" height="20">&nbsp;CSS](https://www.w3.org/Style/CSS/Overview.en.html)
+- [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS" height="20">&nbsp;Tailwind CSS](https://tailwindcss.com/)
+- [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="SASS" height="20">&nbsp;SASS](https://sass-lang.com/)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Credits
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Color icons created by [Freepik - Flaticon](https://www.flaticon.com/free-icons/color)
+Dev icons created by [Devicon](https://devicon.dev/)
