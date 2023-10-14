@@ -120,9 +120,7 @@ const App = () => {
                     )}
 
                     <div className="u-p-5 sm:u-flex-1">
-                      <h3 className="u-text-xl u-font-bold">
-                        {project.title}
-                      </h3>
+                      <h3 className="u-text-xl u-font-bold">{project.title}</h3>
 
                       <div className="u-my-3">
                         <p>
@@ -133,9 +131,13 @@ const App = () => {
                           <div>
                             <p>Tech Stack:</p>
 
-                            <ul className="u-flex u-flex-wrap u-justify-center u-gap-4">
+                            <div className="u-flex u-flex-wrap u-justify-center u-gap-4">
                               {project.skills.map((skill) => (
-                                <a href={skill.link} target="_blank">
+                                <a
+                                  key={skill.key}
+                                  href={skill.link}
+                                  target="_blank"
+                                >
                                   <img
                                     className="u-transition-transform hover:u-scale-110"
                                     src={skill.logo}
@@ -144,7 +146,7 @@ const App = () => {
                                   />
                                 </a>
                               ))}
-                            </ul>
+                            </div>
                           </div>
                         )}
 
