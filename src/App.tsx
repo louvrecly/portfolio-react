@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
-import NavBar from './components/NavBar';
+import GradientBackground from './components/Background/GradientBackground';
 import Banner from './components/Banner';
+import NavBar from './components/NavBar';
 import Section from './components/Section';
 import Card from './components/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -36,6 +37,8 @@ const App = () => {
 
   return (
     <div className="u-relative">
+      <GradientBackground />
+
       <Banner
         id="home"
         name={bannerData.name}
@@ -56,7 +59,7 @@ const App = () => {
             </h3>
 
             <Card>
-              <p className="u-py-3 u-px-6 u-font-mono u-text-start sm:u-px-12">
+              <p className="u-py-3 u-px-5 u-font-mono u-text-start sm:u-px-12">
                 {aboutData.description}
               </p>
             </Card>
@@ -167,25 +170,27 @@ const App = () => {
         </Section>
 
         <Section id="contact" title="Contact">
-          <ul>
-            {contacts.map((contact) => (
-              <li key={contact.key} className="u-mb-3">
-                <label className="u-text-l sm:u-text-xl">
-                  {contact.icon ? (
-                    <FontAwesomeIcon
-                      className="u-mr-3"
-                      icon={contact.icon}
-                    ></FontAwesomeIcon>
-                  ) : (
-                    contact.title
-                  )}
-                  <a href={contact.link} target="_blank">
-                    {contact.value}
-                  </a>
-                </label>
-              </li>
-            ))}
-          </ul>
+          <Card>
+            <div className="u-py-3 u-px-5">
+              {contacts.map((contact) => (
+                <div key={contact.key} className="u-mb-3 last:u-mb-0">
+                  <label className="u-text-l sm:u-text-xl">
+                    {contact.icon ? (
+                      <FontAwesomeIcon
+                        className="u-mr-3"
+                        icon={contact.icon}
+                      ></FontAwesomeIcon>
+                    ) : (
+                      contact.title
+                    )}
+                    <a href={contact.link} target="_blank">
+                      {contact.value}
+                    </a>
+                  </label>
+                </div>
+              ))}
+            </div>
+          </Card>
         </Section>
       </div>
     </div>
