@@ -1,4 +1,4 @@
-import '../styles/GlowBackground.scss';
+import '../../styles/GlowBackground.scss';
 
 const GlowBackground = () => {
   const circles = new Array(100).fill(null);

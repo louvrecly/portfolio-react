@@ -1,5 +1,5 @@
 import Section from './Section';
-import GlowBackground from './GlowBackground';
+import GlowBackground from './Background/GlowBackground';
 
 interface BannerProps {
   id?: string;
