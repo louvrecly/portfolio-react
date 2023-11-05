@@ -4,13 +4,13 @@ const ALL_CONTACT_KEYS = ['email', 'github', 'linkedIn'] as const;
 
 type ContactKey = (typeof ALL_CONTACT_KEYS)[number];
 
-interface Contact {
+type Contact = {
   key: ContactKey;
   title: string;
   value: string;
   link: string;
   icon: IconProp;
-}
+};
 
 type ContactMap = Record<ContactKey, Contact>;
 

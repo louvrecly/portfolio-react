@@ -1,8 +1,8 @@
-interface BannerData {
+type BannerData = {
   name: string;
   title: string;
   location: string;
-}
+};
 
 export const bannerData: BannerData = {
   name: 'Louvre Chow',

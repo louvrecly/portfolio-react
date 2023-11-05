@@ -1,9 +1,9 @@
-interface AboutData {
+type AboutData = {
   name: string;
   description: string;
   identities: string[];
   resumeLink: string;
-}
+};
 
 export const aboutData: AboutData = {
   name: 'Louvre Chow',

@@ -8,27 +8,27 @@ const ALL_SKILL_TYPE_KEYS = [
 
 type SkillTypeKey = (typeof ALL_SKILL_TYPE_KEYS)[number];
 
-export interface Skill {
+export type Skill = {
   key: string;
   name: string;
   logo: string;
   link: string;
-}
+};
 
 export type SkillKey = Skill['key'];
 type SkillsMap = Record<SkillKey, Skill>;
 
-interface SkillType {
+type SkillType = {
   key: SkillTypeKey;
   title: string;
   skillKeys: SkillKey[];
-}
+};
 
-interface DetailedSkillType {
+type DetailedSkillType = {
   key: SkillTypeKey;
   title: string;
   skills: Skill[];
-}
+};
 
 type SkillTypesMap = Record<SkillTypeKey, SkillType>;
 

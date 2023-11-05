@@ -11,7 +11,7 @@ const ALL_PROJECT_KEYS = [
 
 type ProjectKey = (typeof ALL_PROJECT_KEYS)[number];
 
-interface ProjectCore {
+type ProjectCore = {
   key: ProjectKey;
   title: string;
   subtitle: string;
@@ -19,15 +19,15 @@ interface ProjectCore {
   description: string;
   link: string;
   image: string;
-}
+};
 
-interface Project extends ProjectCore {
+type Project = ProjectCore & {
   skillKeys: SkillKey[];
-}
+};
 
-interface DetailedProject extends ProjectCore {
+type DetailedProject = ProjectCore & {
   skills: Skill[];
-}
+};
 
 type ProjectsMap = Record<ProjectKey, Project>;
 

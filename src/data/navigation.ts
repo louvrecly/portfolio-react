@@ -1,8 +1,8 @@
-export interface NavItem {
+export type NavItem = {
   key: string;
   title: string;
   link: string;
-}
+};
 
 export const navItems: NavItem[] = [
   { key: 'home', title: 'Home', link: '#home' },
