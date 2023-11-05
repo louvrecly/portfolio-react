@@ -52,6 +52,7 @@ const frontendSkillKeys: SkillKey[] = [
   'sass',
   'tailwindCss',
   'bootstrap',
+  'd3js',
   'flutter',
 ];
 const backendSkillKeys: SkillKey[] = [
@@ -200,6 +201,12 @@ const skillsMap: SkillsMap = {
     name: 'Bootstrap',
     logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg',
     link: 'https://getbootstrap.com/',
+  },
+  d3js: {
+    key: 'd3js',
+    name: 'D3.js',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/d3js/d3js-original.svg',
+    link: 'https://d3js.org/',
   },
   flutter: {
     key: 'flutter',

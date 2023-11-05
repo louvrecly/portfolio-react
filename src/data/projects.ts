@@ -2,6 +2,7 @@ import { Skill, SkillKey, getSkillsByKeys } from './skills';
 
 const ALL_PROJECT_KEYS = [
   'easyshipWebsite',
+  'betBetter',
   'galleryOfTheGalaxy',
   'letsjamMusic',
   'matchmeSports',
@@ -19,6 +20,7 @@ interface ProjectCore {
   link: string;
   image: string;
 }
+
 interface Project extends ProjectCore {
   skillKeys: SkillKey[];
 }
@@ -54,11 +56,32 @@ const projectsMap: ProjectsMap = {
       'gcp',
     ],
   },
+  betBetter: {
+    key: 'betBetter',
+    title: 'BetBetter · Odds Tracker for Sports Gambling',
+    subtitle: `Next App with interactive UI built with data-driven documents by D3.js`,
+    type: 'Side Project',
+    description: `An odds tracker for sports gambling built with React, Next, TypeScript, HTML and CSS (Tailwind CSS), D3.js, Node.js, and MongoDB for analyzing historical odds data and visualizing trends for making a better betting decision`,
+    link: 'https://bet-better-react.netlify.app/',
+    image: '/screenshots/bet-better-3.jpg',
+    skillKeys: [
+      'react',
+      'next',
+      'typescript',
+      'html',
+      'css',
+      'tailwindCss',
+      'd3js',
+      'nodejs',
+      'expressjs',
+      'mongodb',
+    ],
+  },
   galleryOfTheGalaxy: {
     key: 'galleryOfTheGalaxy',
     title: 'Gallery of the Galaxy · Astronomical Photo Gallery',
     subtitle: `Nuxt App with simplistic UI integrated with NASA's API`,
-    type: 'Personal Project',
+    type: 'Side Project',
     description: `An online gallery built with Vue, Nuxt, HTML and CSS (SASS) for browsing space photos and videos fetched from the NASA's API with filtering and like button features`,
     link: 'https://louvrecly.github.io/gallery-of-the-galaxy/',
     image: '/screenshots/gallery-of-the-galaxy-1.jpg',
@@ -68,7 +91,7 @@ const projectsMap: ProjectsMap = {
     key: 'letsjamMusic',
     title: 'LetsJam · Virtual Band Room with Magenta A.I. Composing Feature',
     subtitle: 'React UI with Node.js server and Magenta A.I. integration',
-    type: 'Personal Project',
+    type: 'Side Project',
     description:
       'An online band room built with React, Redux, TypeScript, Node.js and PostgreSQL and hosted on AWS for composing music, jamming tunes with friends and getting inspiration playing with the Google A.I., Magenta',
     link: '',
@@ -93,7 +116,7 @@ const projectsMap: ProjectsMap = {
     title:
       'MatchMe · Sports Players Matching Platform with Multiple Ranking Algorithms',
     subtitle: 'Minimalistic HTML, CSS & Javascript Website',
-    type: 'Personal Project',
+    type: 'Side Project',
     description:
       'An opponent matching platform built with HTML, TypeScript, CSS and JSON for sports players based on competency (by Elo Rating Algorithm), locations and availability',
     link: '',
@@ -113,7 +136,7 @@ const projectsMap: ProjectsMap = {
     key: 'fruitle',
     title: 'Fruitle · Decryption Game',
     subtitle: 'Logic Puzzle built with Scratch',
-    type: 'Personal Project',
+    type: 'Side Project',
     description:
       'A fun puzzle game of logic built using Scratch with configurable difficulties',
     link: 'https://scratch.mit.edu/projects/691639249',
