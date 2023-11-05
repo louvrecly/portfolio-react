@@ -5,6 +5,11 @@
 @tailwind utilities;
 
 :root {
+  --color-cool-positive: 160deg 80% 60%;
+  --color-cool-negative: 250deg 80% 60%;
+  --color-warm-positive: 60deg 80% 60%;
+  --color-warm-negative: 350deg 80% 60%;
+
   line-height: 1.5;
   font-weight: 400;
 
