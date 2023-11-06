@@ -18,7 +18,6 @@ const App = () => {
       <GradientBackground />
 
       <Banner
-        id="home"
         name={bannerData.name}
         title={bannerData.title}
         location={bannerData.location}

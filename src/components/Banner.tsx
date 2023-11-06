@@ -4,15 +4,14 @@ import Link from './Link';
 import Button from './Button';
 
 interface BannerProps {
-  id?: string;
   name: string;
   title: string;
   location: string;
 }
 
-const Banner = ({ id, name, title, location }: BannerProps) => {
+const Banner = ({ name, title, location }: BannerProps) => {
   return (
-    <Section id={id}>
+    <Section id="home">
       <GlowBackground />
 
       <div className="u-py-16 u-px-5 u-absolute u-inset-0 u-bg-gradient-to-t u-from-zinc-950/70 u-to-transparent u-flex u-justify-center u-items-center sm:u-px-10">
