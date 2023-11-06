@@ -24,7 +24,7 @@ type SkillType = {
   skillKeys: SkillKey[];
 };
 
-type DetailedSkillType = {
+export type DetailedSkillType = {
   key: SkillTypeKey;
   title: string;
   skills: Skill[];
