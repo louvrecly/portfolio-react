@@ -9,6 +9,10 @@ export default {
         'pulse-full-alt': 'pulse-full-alt 10s ease infinite',
       },
       colors: {
+        main: 'hsl(var(--color-main))',
+        primary: 'hsl(var(--color-primary))',
+        secondary: 'hsl(var(--color-secondary))',
+        highlight: 'hsl(var(--color-highlight))',
         cool: {
           positive: 'hsl(var(--color-cool-positive))',
           negative: 'hsl(var(--color-cool-negative))',
