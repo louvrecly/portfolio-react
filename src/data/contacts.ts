@@ -4,7 +4,7 @@ const ALL_CONTACT_KEYS = ['email', 'github', 'linkedIn'] as const;
 
 type ContactKey = (typeof ALL_CONTACT_KEYS)[number];
 
-type Contact = {
+export type Contact = {
   key: ContactKey;
   title: string;
   value: string;
