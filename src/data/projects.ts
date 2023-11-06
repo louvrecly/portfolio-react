@@ -25,7 +25,7 @@ type Project = ProjectCore & {
   skillKeys: SkillKey[];
 };
 
-type DetailedProject = ProjectCore & {
+export type DetailedProject = ProjectCore & {
   skills: Skill[];
 };
 
