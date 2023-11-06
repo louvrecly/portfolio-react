@@ -7,6 +7,7 @@ import Section from './components/Section';
 import Card from './components/Card';
 import Link from './components/Link';
 import Button from './components/Button';
+import SkillBadge from './components/SkillBadge';
 import { navItems } from './data/navigation';
 import { bannerData } from './data/banner';
 import { aboutData } from './data/about';
@@ -80,24 +81,7 @@ const App = () => {
 
                     <ul className="u-flex u-flex-wrap u-justify-around u-gap-4">
                       {skillType.skills.map((skill) => (
-                        <Link
-                          key={skill.key}
-                          href={skill.link || '#'}
-                          target="_blank"
-                        >
-                          <li className="u-flex u-flex-col u-items-center u-gap-1 u-transition-transform hover:u-scale-110">
-                            {skill.logo && (
-                              <div className="u-w-10 u-h-10">
-                                <img
-                                  className="u-w-full"
-                                  src={skill.logo}
-                                  alt={skill.name}
-                                />
-                              </div>
-                            )}
-                            <p className="u-text-sm">{skill.name}</p>
-                          </li>
-                        </Link>
+                        <SkillBadge key={skill.key} skill={skill} showName />
                       ))}
                     </ul>
                   </div>
@@ -140,18 +124,11 @@ const App = () => {
 
                             <div className="u-flex u-flex-wrap u-justify-center u-gap-4">
                               {project.skills.map((skill) => (
-                                <Link
+                                <SkillBadge
                                   key={skill.key}
-                                  href={skill.link}
-                                  target="_blank"
-                                >
-                                  <img
-                                    className="u-transition-transform hover:u-scale-110"
-                                    src={skill.logo}
-                                    alt={skill.name}
-                                    width="30"
-                                  />
-                                </Link>
+                                  skill={skill}
+                                  size="sm"
+                                />
                               ))}
                             </div>
                           </div>
