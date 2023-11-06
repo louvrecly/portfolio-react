@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 interface SectionProps {
   id?: string;
@@ -14,17 +15,17 @@ const Section = ({ title = '', id, children }: SectionProps) => {
     >
       {title && (
         <h2 className="u-p-5 u-text-3xl u-font-bold u-flex u-items-center u-gap-4 sm:u-px-10">
-          <span className="u-border-y-2 u-border-inherit u-h-0 u-flex-1"></span>
+          <span className="u-border-y-2 u-border-primary u-h-0 u-flex-1"></span>
           <span>{title}</span>
-          <span className="u-border-y-2 u-border-inherit u-h-0 u-flex-1"></span>
+          <span className="u-border-y-2 u-border-primary u-h-0 u-flex-1"></span>
         </h2>
       )}
 
       <div
-        className={
-          'u-pb-16 u-px-5 u-flex-1 u-flex u-items-center u-justify-center sm:u-px-10' +
-          (!title ? ' u-pt-16' : '')
-        }
+        className={twMerge(
+          'u-pb-16 u-px-5 u-flex-1 u-flex u-items-center u-justify-center sm:u-px-10',
+          !title && ' u-pt-16',
+        )}
       >
         {children}
       </div>
