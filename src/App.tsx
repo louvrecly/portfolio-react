@@ -1,10 +1,12 @@
 import { useState, useEffect, useMemo } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import GradientBackground from './components/Background/GradientBackground';
 import Banner from './components/Banner';
 import NavBar from './components/NavBar';
 import Section from './components/Section';
 import Card from './components/Card';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from './components/Link';
+import Button from './components/Button';
 import { navItems } from './data/navigation';
 import { bannerData } from './data/banner';
 import { aboutData } from './data/about';
@@ -78,22 +80,24 @@ const App = () => {
 
                     <ul className="u-flex u-flex-wrap u-justify-around u-gap-4">
                       {skillType.skills.map((skill) => (
-                        <a
+                        <Link
                           key={skill.key}
                           href={skill.link || '#'}
                           target="_blank"
                         >
                           <li className="u-flex u-flex-col u-items-center u-gap-1 u-transition-transform hover:u-scale-110">
                             {skill.logo && (
-                              <img
-                                src={skill.logo}
-                                alt={skill.name}
-                                width="50"
-                              />
+                              <div className="u-w-10 u-h-10">
+                                <img
+                                  className="u-w-full"
+                                  src={skill.logo}
+                                  alt={skill.name}
+                                />
+                              </div>
                             )}
-                            {skill.name}
+                            <p className="u-text-sm">{skill.name}</p>
                           </li>
-                        </a>
+                        </Link>
                       ))}
                     </ul>
                   </div>
@@ -136,7 +140,7 @@ const App = () => {
 
                             <div className="u-flex u-flex-wrap u-justify-center u-gap-4">
                               {project.skills.map((skill) => (
-                                <a
+                                <Link
                                   key={skill.key}
                                   href={skill.link}
                                   target="_blank"
@@ -147,7 +151,7 @@ const App = () => {
                                     alt={skill.name}
                                     width="30"
                                   />
-                                </a>
+                                </Link>
                               ))}
                             </div>
                           </div>
@@ -157,9 +161,9 @@ const App = () => {
                       </div>
 
                       {project.link && (
-                        <a href={project.link} target="_blank">
-                          <button>View Demo</button>
-                        </a>
+                        <Link href={project.link} target="_blank">
+                          <Button>View Demo</Button>
+                        </Link>
                       )}
                     </div>
                   </div>
@@ -183,9 +187,9 @@ const App = () => {
                     ) : (
                       contact.title
                     )}
-                    <a href={contact.link} target="_blank">
+                    <Link href={contact.link} target="_blank">
                       {contact.value}
-                    </a>
+                    </Link>
                   </label>
                 </div>
               ))}

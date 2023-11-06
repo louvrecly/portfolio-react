@@ -1,4 +1,5 @@
 import { NavItem } from '../data/navigation';
+import Link from './Link';
 
 interface NavLinksProps {
   navItems: NavItem[];
@@ -9,9 +10,9 @@ const NavLinks = ({ navItems = [], onNavigated }: NavLinksProps) => {
   return (
     <>
       {navItems.map((navItem) => (
-        <a key={navItem.key} href={navItem.link}>
+        <Link key={navItem.key} href={navItem.link}>
           <div onClick={onNavigated}>{navItem.title}</div>
-        </a>
+        </Link>
       ))}
     </>
   );

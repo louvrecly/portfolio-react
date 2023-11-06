@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NavLinks from './NavLinks';
+import Button from './Button';
 import { NavItem } from '../data/navigation';
 
 interface NavBarProps {
@@ -22,12 +23,12 @@ const NavBar = ({ navItems = [] }: NavBarProps) => {
     <div className="u-sticky u-top-0 u-inset-x-0 u-z-10">
       <nav className="u-relative u-p-2 u-bg-zinc-950/70 u-shadow-lg u-z-10 u-transition hover:u-shadow-xl hover:u-bg-zinc-950/90 sm:u-py-5 sm:u-px-10">
         <div className="u-flex u-flex-row-reverse sm:u-hidden">
-          <button
+          <Button
             className="u-py-2 u-px-4 u-border-none"
             onClick={toggleDrawer}
           >
             <FontAwesomeIcon icon={['fas', 'bars']} />
-          </button>
+          </Button>
         </div>
 
         <div className="u-hidden sm:u-flex sm:u-gap-4">
