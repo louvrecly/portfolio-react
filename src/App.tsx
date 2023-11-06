@@ -1,4 +1,3 @@
-import { useState, useEffect, useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import GradientBackground from './components/Background/GradientBackground';
 import Banner from './components/Banner';
@@ -14,30 +13,9 @@ import { aboutData } from './data/about';
 import { skillTypes } from './data/skills';
 import { projects } from './data/projects';
 import { contacts } from './data/contacts';
-
-const VOWELS = ['a', 'e', 'i', 'o', 'u'];
-const IDENTITY_CHANGE_INTERVAL = 1500;
+import AboutSection from './components/AboutSection';
 
 const App = () => {
-  const [identityIndex, setIdentityIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIdentityIndex((index) => (index + 1) % aboutData.identities.length);
-    }, IDENTITY_CHANGE_INTERVAL);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const identity = useMemo(
-    () => aboutData.identities[identityIndex],
-    [identityIndex],
-  );
-  const identityArticle = useMemo(
-    () => (VOWELS.includes(identity[0].toLowerCase()) ? 'an' : 'a'),
-    [identity],
-  );
-
   return (
     <div className="u-relative">
       <GradientBackground />
@@ -52,22 +30,11 @@ const App = () => {
       <NavBar navItems={navItems}></NavBar>
 
       <div>
-        <Section id="about" title="About Me">
-          <div className="u-max-w-4xl">
-            <h3 className="u-my-16 u-text-2xl">
-              <span className="u-block sm:u-inline">
-                {aboutData.name} is {identityArticle}
-              </span>{' '}
-              <strong className="u-font-mono">{identity}</strong>
-            </h3>
-
-            <Card>
-              <p className="u-py-3 u-px-5 u-font-mono u-text-start sm:u-px-12">
-                {aboutData.description}
-              </p>
-            </Card>
-          </div>
-        </Section>
+        <AboutSection
+          name={aboutData.name}
+          description={aboutData.description}
+          identities={aboutData.identities}
+        />
 
         <Section id="skills" title="Tools and Skills">
           <div className="u-max-w-4xl">
