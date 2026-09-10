@@ -4,15 +4,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/**
+ * Theme tokens.
+ *
+ * Dark is the default on :root; light overrides in the media query below.
+ * Names describe the role a colour plays, not a brand hierarchy — in
+ * particular `on-surface` and `on-surface-raised` are two different
+ * foregrounds bound to two different surfaces. See CONTEXT.md.
+ *
+ * Raised surfaces carry their alpha in the token so the rotating gradient
+ * bleeds through them, as it always has. `surface-overlay` is the opaque
+ * variant, for full-screen overlays like the mobile drawer, where you must
+ * not be able to read the page through the menu.
+ */
 :root {
-  --color-main: 0 0% 15%;
-  --color-primary: 0 0% 100%;
-  --color-secondary: 0 0% 100%;
-  --color-highlight: 45deg 100% 50%;
-  --color-cool-positive: 160deg 80% 60%;
-  --color-cool-negative: 250deg 80% 60%;
-  --color-warm-positive: 60deg 80% 60%;
-  --color-warm-negative: 350deg 80% 60%;
+  --color-surface: 0 0% 15%;
+  --color-on-surface: 0 0% 100%;
+  --color-surface-raised: 240 6% 4% / 0.5;
+  --color-surface-overlay: 240 6% 8%;
+  --color-on-surface-raised: 0 0% 100%;
+  --color-highlight: 160 90% 48%;
+  --color-cool-from: 160 80% 60%;
+  --color-cool-to: 250 80% 60%;
+  --color-warm-from: 60 80% 60%;
+  --color-warm-to: 350 80% 60%;
 
   line-height: 1.5;
   font-weight: 400;
@@ -24,6 +39,29 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+/**
+ * Light theme — "muted lavender".
+ *
+ * Gradient lightness is deliberately higher than dark's: a blob at peak
+ * darkens the effective background under text, and these values are the
+ * minimum lift that keeps every foreground above WCAG AA. Lowering them
+ * makes the animation more visible and the text less readable.
+ */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-surface: 230 32% 96%;
+    --color-on-surface: 230 26% 14%;
+    --color-surface-raised: 0 0% 100% / 0.58;
+    --color-surface-overlay: 0 0% 100%;
+    --color-on-surface-raised: 230 26% 14%;
+    --color-highlight: 160 95% 21%;
+    --color-cool-from: 190 45% 76%;
+    --color-cool-to: 255 48% 80%;
+    --color-warm-from: 45 45% 81%;
+    --color-warm-to: 340 42% 81%;
+  }
 }
 
 #root {
@@ -53,13 +91,4 @@ button {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-main: 230deg 50% 90%;
-    --color-primary: 0 0% 5%;
-    --color-secondary: 0 0% 100%;
-    --color-highlight: 160deg 100% 50%;
-  }
 }

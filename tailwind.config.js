@@ -9,17 +9,23 @@ export default {
         'pulse-full-alt': 'pulse-full-alt 10s ease infinite',
       },
       colors: {
-        main: 'hsl(var(--color-main))',
-        primary: 'hsl(var(--color-primary))',
-        secondary: 'hsl(var(--color-secondary))',
+        surface: {
+          DEFAULT: 'hsl(var(--color-surface))',
+          raised: 'hsl(var(--color-surface-raised))',
+          overlay: 'hsl(var(--color-surface-overlay))',
+        },
+        'on-surface': {
+          DEFAULT: 'hsl(var(--color-on-surface))',
+          raised: 'hsl(var(--color-on-surface-raised))',
+        },
         highlight: 'hsl(var(--color-highlight))',
         cool: {
-          positive: 'hsl(var(--color-cool-positive))',
-          negative: 'hsl(var(--color-cool-negative))',
+          from: 'hsl(var(--color-cool-from))',
+          to: 'hsl(var(--color-cool-to))',
         },
         warm: {
-          positive: 'hsl(var(--color-warm-positive))',
-          negative: 'hsl(var(--color-warm-negative))',
+          from: 'hsl(var(--color-warm-from))',
+          to: 'hsl(var(--color-warm-to))',
         },
       },
       fontFamily: {
