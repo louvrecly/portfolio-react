@@ -12,7 +12,7 @@ export default {
         surface: {
           DEFAULT: 'hsl(var(--color-surface))',
           raised: 'hsl(var(--color-surface-raised))',
-          overlay: 'hsl(var(--color-surface-overlay))',
+          'raised-hover': 'hsl(var(--color-surface-raised-hover))',
         },
         'on-surface': {
           DEFAULT: 'hsl(var(--color-on-surface))',

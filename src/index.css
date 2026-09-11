@@ -13,15 +13,17 @@
  * foregrounds bound to two different surfaces. See CONTEXT.md.
  *
  * Raised surfaces carry their alpha in the token so the rotating gradient
- * bleeds through them, as it always has. `surface-overlay` is the opaque
- * variant, for full-screen overlays like the mobile drawer, where you must
- * not be able to read the page through the menu.
+ * bleeds through them, as it always has. `surface-raised-hover` is that same
+ * surface at a higher alpha, for the hover state of interactive raised
+ * surfaces. Full-screen overlays stay translucent too: the mobile drawer
+ * uses a backdrop blur, not opacity, to stop the page being readable
+ * through it.
  */
 :root {
   --color-surface: 0 0% 15%;
   --color-on-surface: 0 0% 100%;
   --color-surface-raised: 240 6% 4% / 0.5;
-  --color-surface-overlay: 240 6% 8%;
+  --color-surface-raised-hover: 240 6% 4% / 0.75;
   --color-on-surface-raised: 0 0% 100%;
   --color-highlight: 160 90% 48%;
   --color-cool-from: 160 80% 60%;
@@ -54,7 +56,7 @@
     --color-surface: 230 32% 96%;
     --color-on-surface: 230 26% 14%;
     --color-surface-raised: 0 0% 100% / 0.58;
-    --color-surface-overlay: 0 0% 100%;
+    --color-surface-raised-hover: 0 0% 100% / 0.8;
     --color-on-surface-raised: 230 26% 14%;
     --color-highlight: 160 95% 21%;
     --color-cool-from: 190 45% 76%;
@@ -62,6 +64,33 @@
     --color-warm-from: 45 45% 81%;
     --color-warm-to: 340 42% 81%;
   }
+}
+
+/**
+ * The hero is an inverted region: it stays dark in *both* themes, because the
+ * GlowBackground particles are generated at bright lightness values and only
+ * read against black. Rather than hard-coding literals into the markup, it
+ * re-declares the theme tokens for its own subtree, so anything rendered
+ * inside it — Button, Link — themes correctly without knowing where it sits.
+ *
+ * The hero re-declares the *whole* non-gradient token set, including any it
+ * does not consume today, so that anything rendered into it resolves to dark
+ * values rather than silently falling through to the page theme.
+ *
+ * These mirror the dark values above with two exceptions. `surface` is opaque
+ * and darker than the page, because the particles need black rather than the
+ * page's grey. And `surface-raised` is a *lift* here — white at low alpha —
+ * not a darkening: against a near-black ground there is nothing darker to go
+ * to, and the page-level value would render the hero's button invisible
+ * (measured 1.00:1 against the ground).
+ */
+.o-hero {
+  --color-surface: 240 6% 4%;
+  --color-on-surface: 0 0% 100%;
+  --color-surface-raised: 0 0% 100% / 0.1;
+  --color-surface-raised-hover: 0 0% 100% / 0.18;
+  --color-on-surface-raised: 0 0% 100%;
+  --color-highlight: 160 90% 48%;
 }
 
 #root {
