@@ -18,7 +18,10 @@ export default {
           DEFAULT: 'hsl(var(--color-on-surface))',
           raised: 'hsl(var(--color-on-surface-raised))',
         },
-        highlight: 'hsl(var(--color-highlight))',
+        highlight: {
+          DEFAULT: 'hsl(var(--color-highlight))',
+          hover: 'hsl(var(--color-highlight-hover))',
+        },
         cool: {
           from: 'hsl(var(--color-cool-from))',
           to: 'hsl(var(--color-cool-to))',

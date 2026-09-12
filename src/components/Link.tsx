@@ -11,7 +11,7 @@ const Link = ({
   return (
     <a
       className={twMerge(
-        'u-text-highlight u-transition hover:u-underline',
+        'u-text-highlight u-transition hover:u-text-highlight-hover',
         className,
       )}
       {...props}

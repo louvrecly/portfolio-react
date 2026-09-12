@@ -24,7 +24,8 @@ that had to flip with it.
 | **Surface-raised**       | Anything lifted off its ground: cards, the nav bar, buttons, the mobile drawer. Translucent, so what sits behind it shows through — the gradient field on the page, the glow particles in the hero. On the page it is a dark wash; in the hero, where the ground is already near-black, it is a white lift instead. |
 | **On-surface-raised**    | Text drawn on a raised surface.                                                                                                                                                                                                                                                                                     |
 | **Surface-raised-hover** | The same raised surface at a higher alpha. The hover state of interactive raised surfaces: the nav bar and buttons.                                                                                                                                                                                                 |
-| **Highlight**            | The single accent colour: links, buttons, hover states. One value per theme.                                                                                                                                                                                                                                        |
+| **Highlight**            | The single accent colour: links and buttons. One value per theme.                                                                                                                                                                                                                                                   |
+| **Highlight-hover**      | The accent's hover state. It does **not** move the same way in both themes: dark brightens, light deepens. See the rule below.                                                                                                                                                                                      |
 | **Gradient field**       | The two rotating, blurred colour blobs behind all content. Its endpoints are `cool-from`/`cool-to` and `warm-from`/`warm-to`.                                                                                                                                                                                       |
 | **Hero**                 | The banner at the top of the page. A deliberately inverted region: it stays dark in **both** themes. It re-declares the theme tokens on its own container (`.o-hero` in `src/index.css`), so components rendered inside it use the ordinary tokens and resolve to dark values without knowing where they sit.       |
 
@@ -63,5 +64,16 @@ that had to flip with it.
   it predates the token work. Dimming the glow would fix it and change the
   design; if that trade is ever made, make it deliberately.
 
+- **The accent's hover state moves in opposite directions in the two themes,
+  and that asymmetry is load-bearing.** In dark the accent brightens, so the
+  hover reads as a glow; measured worst-case on a raised surface it holds at
+  6.3:1. In light it cannot brighten at all: the accent already sits near the
+  top of its legible range against a pale raised surface, and every step
+  upward falls below AA and then dissolves into the surface entirely. So light
+  deepens instead, measuring 12.1:1, and reads as the link gaining weight
+  rather than lighting up. Do not "fix" this by making the two themes
+  symmetric — it would make light-theme links unreadable on hover.
+
 - **The accent is one token, used at full opacity.** Diluting it with an alpha
-  modifier reduces contrast against an already-composited backdrop.
+  modifier reduces contrast against an already-composited backdrop. Hover is a
+  second token, not an alpha step, for the same reason.
