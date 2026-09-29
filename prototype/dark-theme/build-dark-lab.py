@@ -80,6 +80,16 @@ const PALETTES = {
     warmFrom: [45, 36, 39],  warmTo:  [340, 33, 39],
     verdict: 'The hero stops being a separate region: page against hero ground measures 1.05:1, effectively seamless. It also lifts a documented prohibition \\u2014 accent text directly on the page goes 2.05:1 to 5.65:1, so the CONTEXT.md rule against putting the accent on surface would no longer bind in dark. The price is paid twice: the lift squeezes the accent from above, so the gradient has to run much dimmer than any other candidate (38% saturation) to keep links on a card at 4.76:1, and the animation goes quiet. A real position, not a compromise \\u2014 but it changes what raised means.',
   }, ACCENT, HERO_G),
+
+  d: Object.assign({
+    id: 'D', name: 'Unified, gradient kept', short: 'D \u00b7 UNIFIED',
+    desc: 'Hero-unified without touching the gradient. The page ground becomes the hero\u2019s own ground, 240 6% 4%, and raised surfaces stay a darkening at today\u2019s 0.5 alpha, only a shade deeper. The four blobs are today\u2019s values, unchanged.',
+    surface: [240, 6, 4], onSurface: [0, 0, 100],
+    raised: [240, 6, 2, 0.5], onRaised: [0, 0, 100],
+    coolFrom: [160, 80, 60], coolTo: [250, 80, 60],
+    warmFrom: [60, 80, 60],  warmTo:  [350, 80, 60],
+    verdict: 'Every ratio beats REF and the hero seam disappears (1.00:1), with the gradient exactly as it is today. Body text on the page reaches 3.88:1. That is close to the most any page ground can do with this gradient: the yellow blob binds it, and even pure black only reaches 4.11:1. It passes because only large text sits there, as it does today. Two things C had that D does not: the accent still cannot sit directly on the page (2.42:1), and cards stay a darkening, because a white lift over this gradient drops links on cards to about 2.2:1. The cost that no text ratio shows: where no blob is behind them, cards almost disappear into the page. Card against bare ground measures 1.01:1, against 1.18:1 today. When the ground is already near black, a darkening has almost nowhere to go. The shadow and the blobs are what separate cards in D.',
+  }, ACCENT, HERO_G),
 };
 """
 
@@ -89,7 +99,8 @@ document.getElementById('plates').innerHTML =
   plateHTML('ref', PALETTES.ref, 4) +
   plateHTML('a', PALETTES.a, 5) +
   plateHTML('b', PALETTES.b, 6) +
-  plateHTML('c', PALETTES.c, 7);
+  plateHTML('c', PALETTES.c, 7) +
+  plateHTML('d', PALETTES.d, 8);
 
 /* ============================================================
    LEVERS — which knob actually moves the numbers
@@ -121,7 +132,7 @@ document.getElementById('levers').innerHTML = LEVERS.map(lv => `
 /* ============================================================
    SEAM — how each ground meets the hero
    ============================================================ */
-document.getElementById('seams').innerHTML = ['ref', 'a', 'b', 'c'].map(k => {
+document.getElementById('seams').innerHTML = ['ref', 'a', 'b', 'c', 'd'].map(k => {
   const p = PALETTES[k];
   const seam = ratio(hslToRgb(240, 6, 4), rgbOf(p.surface));
   return `
@@ -153,6 +164,7 @@ SECTIONS = """
       <a class="lab-btn" href="#plate-a">A &middot; TINTED</a>
       <a class="lab-btn" href="#plate-b">B &middot; MATCHED</a>
       <a class="lab-btn" href="#plate-c">C &middot; HERO-UNIFIED</a>
+      <a class="lab-btn" href="#plate-d">D &middot; UNIFIED</a>
       <a class="lab-btn" href="#levers-sec">LEVERS</a>
       <a class="lab-btn" href="#seam">SEAM</a>
     </nav>
@@ -165,11 +177,11 @@ SECTIONS = """
 
   <header class="lab-masthead">
     <p class="lab-eyebrow">portfolio-react &middot; dark theme prototype &middot; throwaway, not in the repo</p>
-    <h1 class="lab-title">Four dark grounds, measured</h1>
+    <h1 class="lab-title">Five dark grounds, measured</h1>
     <p class="lab-standfirst">
       The light theme was chosen from four prototyped directions. The dark theme was never chosen at all &mdash;
       its ground and its gradient are the values that happened to be in the file before the token refactor.
-      This page puts four candidate dark grounds through the same harness the light palettes were judged in:
+      This page puts five candidate dark grounds through the same harness the light palettes were judged in:
       the real portfolio, real copy, live gradients, and every ratio computed against the actual composited
       pixel rather than a flat swatch. Pick a plate, or steal across them.
     </p>
@@ -257,7 +269,7 @@ SECTIONS = """
         <code>CONTEXT.md</code> exists to prevent.
       </p>
       <p>
-        One row is expected to fail in three of the four plates: <b>accent on page</b>. Putting highlight-coloured
+        One row is expected to fail in four of the five plates: <b>accent on page</b>. Putting highlight-coloured
         text directly on the page ground measures 2.05:1 in today&rsquo;s dark theme, and no lightness value fixes
         it &mdash; the accent is squeezed between a dark ground and bright blobs. Nothing in the app does this, and
         the rule against it is documented. Candidate C is the one plate where that constraint lifts.
@@ -270,7 +282,7 @@ SECTIONS = """
   <!-- ============ SEAM ============ -->
   <section class="lab-sec" id="seam">
     <div class="lab-sec-head">
-      <span class="lab-sec-num">08</span>
+      <span class="lab-sec-num">09</span>
       <h2 class="lab-sec-title">Where the page meets the hero</h2>
     </div>
     <div class="lab-sec-body">
@@ -291,7 +303,7 @@ SECTIONS = """
   <!-- ============ AFTER ============ -->
   <section class="lab-sec">
     <div class="lab-sec-head">
-      <span class="lab-sec-num">09</span>
+      <span class="lab-sec-num">10</span>
       <h2 class="lab-sec-title">What happens after you pick</h2>
     </div>
     <div class="lab-sec-body">
@@ -305,6 +317,10 @@ SECTIONS = """
         means in dark</b>, from a darkening to a lift, which is a vocabulary change and wants a line in
         <code>CONTEXT.md</code>. And <b>if the gradient calms, say so in the rule</b>: the existing note about
         gradient lightness is written as a light-theme constraint, and it would become a rule about both themes.
+      </p>
+      <p>
+        D is the answer to &ldquo;unify the hero but keep the gradient&rdquo;: same animation as today, no seam, and
+        every ratio up. What it gives up relative to C is only what C bought with its dimmer gradient.
       </p>
       <p>
         Mixing is fine and probably likely &mdash; B&rsquo;s gradient on REF&rsquo;s grey ground, or C&rsquo;s seam
@@ -324,5 +340,10 @@ out = '\n'.join([
   '<script>', ASSETS.replace('<script>', '').replace('</script>', '').strip(), '</script>',
   '<script>', HELPERS.replace('<script>', '').strip(), PALETTES, MOCK, HERO, RENDER, MOTION, '</script>',
 ])
+# post-build fixes: tofu-prone glyphs, and the duplicate body row left by the rail surgery
+out = out.replace('&#9208; PAUSE MOTION', 'PAUSE MOTION')
+out = out.replace("off ? '\u25b6 RESUME MOTION' : '\u23f8 PAUSE MOTION'", "off ? 'RESUME MOTION' : 'PAUSE MOTION'")
+out = out.replace("        ${ratioRow('Body text on page', 'on-surface \u2192 surface, large only', rBody2, 'large')}\n", '')
+out = out.replace("  const rBody2  = rBody;\n", '')
 open(OUT, 'w', encoding='utf-8').write(out)
 print('wrote', OUT, len(out.split('\n')), 'lines')
