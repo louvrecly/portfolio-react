@@ -15,9 +15,9 @@ const Section = ({ title = '', id, children }: SectionProps) => {
     >
       {title && (
         <h2 className="u-p-5 u-text-3xl u-font-bold u-flex u-items-center u-gap-4 sm:u-px-10">
-          <span className="u-border-y-2 u-border-primary u-h-0 u-flex-1"></span>
+          <span className="u-border-y-2 u-border-on-surface u-h-0 u-flex-1"></span>
           <span>{title}</span>
-          <span className="u-border-y-2 u-border-primary u-h-0 u-flex-1"></span>
+          <span className="u-border-y-2 u-border-on-surface u-h-0 u-flex-1"></span>
         </h2>
       )}
 

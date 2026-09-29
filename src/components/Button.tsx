@@ -11,7 +11,7 @@ const Button = ({
   return (
     <button
       className={twMerge(
-        'u-py-1 u-px-5 u-bg-zinc-950/50 u-text-highlight/90 u-cursor-pointer u-transition-colors hover:u-bg-zinc-950/70 hover:u-text-highlight hover:u-border-highlight',
+        'u-py-1 u-px-5 u-bg-surface-raised u-text-highlight u-cursor-pointer u-transition-colors hover:u-bg-surface-raised-hover hover:u-border-highlight hover:u-text-highlight-hover',
         className,
       )}
       {...props}
